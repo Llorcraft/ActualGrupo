@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?awl6vw');
+    src:    url('fonts/icomoon.eot?awl6vw#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?awl6vw') format('truetype'),
+        url('fonts/icomoon.woff?awl6vw') format('woff'),
+        url('fonts/icomoon.svg?awl6vw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-call60:before {
+    content: "\e915";
+}
+.icon-magnifying-glass34:before {
+    content: "\e914";
+}
+.icon-play-video3:before {
+    content: "\e913";
+}
+.icon-cloud-computing15:before {
+    content: "\e911";
+}
+.icon-up-arrow95:before {
+    content: "\e912";
+}
+.icon-spotted:before {
+    content: "\e910";
+}
+.icon-down138:before {
+    content: "\e90f";
+}
+.icon-down139:before {
+    content: "\e90e";
+}
+.icon-global50:before {
+    content: "\e90d";
+}
+.icon-wheels7:before {
+    content: "\e90c";
+}
+.icon-tool957:before {
+    content: "\e90a";
+}
+.icon-light-bulbs:before {
+    content: "\e90b";
+}
+.icon-book-bag:before {
+    content: "\e909";
+}
+.icon-profile29:before {
+    content: "\e908";
+}
+.icon-social-network156:before {
+    content: "\e905";
+}
+.icon-ships:before {
+    content: "\e900";
+}
+.icon-look11:before {
+    content: "\e904";
+}
+.icon-earth94:before {
+    content: "\e907";
+}
+.icon-bill9:before {
+    content: "\e906";
+}
+.icon-lists10:before {
+    content: "\e901";
+}
+.icon-file161:before {
+    content: "\e903";
+}
+.icon-verification18:before {
+    content: "\e002";
+}
+.icon-education11:before {
+    content: "\e902";
+}
+
