@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <style type="text/css">
+        ul { list-style: none; padding: 0; margin: 0; width: 27px; height: 40px; overflow: hidden; display: inline-block; }
+            ul li { line-height: 40px; height: 40px; text-align: center; font-size: 40px; font-weight: bold; font-family: Verdana; border-bottom: 1px solid transparent }
+    </style>
+    <script type="text/javascript">
+
+        function model(number) {
+            var self = this;
+
+            self.number = ko.observable(number);
+
+            setInterval(self.number(self.number++), 1000);
+        }
+
+        $(function () {
+
+
+
+            ko.applyBindings(null, $("body")[0]);
+            setInterval(function () {
+                console.log(parseInt($("ul li:first").css("margin-top")), parseInt($("ul").height() * 10));
+                $("ul li:first").animate({ "margin-top": parseInt($("ul li:first").css("margin-top")) - $("ul li:first").height() - 1}, 250, function () {
+                    if (parseInt($("ul li:first").css("margin-top")) === -parseInt($("ul").height() * 10 + 10))
+                        $("ul li:first").css("margin-top", 0);
+                });
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <!--ko foreach: _.range(0, 5)-->
+    <ul data-bind="foreach: _.range(0, 10).concat([0])">
+        <li data-bind="html: $data"></li>
+    </ul>
+    <!--/ko-->
+</body>
+</html>
