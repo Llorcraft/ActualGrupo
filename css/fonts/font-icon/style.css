@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?awl6vw');
-    src:    url('fonts/icomoon.eot?awl6vw#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?awl6vw') format('truetype'),
-        url('fonts/icomoon.woff?awl6vw') format('woff'),
-        url('fonts/icomoon.svg?awl6vw#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?5noa0i');
+    src:    url('fonts/icomoon.eot?5noa0i#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?5noa0i') format('truetype'),
+        url('fonts/icomoon.woff?5noa0i') format('woff'),
+        url('fonts/icomoon.svg?5noa0i#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-historic-theatre:before {
+    content: "\e919";
+}
+.icon-parking-sign:before {
+    content: "\e916";
+}
+.icon-subway-sign:before {
+    content: "\e917";
+}
+.icon-school-bus-front:before {
+    content: "\e918";
+}
 .icon-call60:before {
     content: "\e915";
 }

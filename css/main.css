@@ -14,67 +14,48 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
 }
+body #hand-bag {
+  margin: 10px;
+}
+body #hand-bag .selected-tool {
+  height: 60px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+}
+body .nicescroll-rails-hr {
+  visibility: hidden;
+}
 body .product-name {
-  font-size: 150%;
+  font-size: 110%;
   margin-bottom: 20px;
+}
+body .product-name label {
   cursor: pointer;
+  width: 100%;
+  margin-right: -70px;
+}
+body .product-name span.ios-toggle-container {
+  float: left;
+  margin: 10px 10px 0 0;
+  text-align: center;
+}
+body .product-name span.ios-toggle-container label {
+  width: 60px;
+  margin: 0 !important;
 }
 body .product-name.etray img {
   margin-bottom: -10px;
 }
-body .product-name label {
-  width: 100%;
-  cursor: pointer;
-  display: block;
-  padding-left: 40px;
-  background-image: url(img/radio-buttons.png);
-  background-repeat: no-repeat;
-  background-position: 0 15px;
+body .product-name.elevel span.ios-toggle-container,
+body .product-name.evalue span.ios-toggle-container {
+  margin-top: 15px;
 }
-body .product-name.face:hover label,
-body .product-name.etray:hover label,
-body .product-name.feedback:hover label,
-body .product-name.papi:hover label,
-body .product-name.delfos:hover label {
-  background-position: 0 -286px;
-}
-body .product-name.face.selected label,
-body .product-name.etray.selected label,
-body .product-name.feedback.selected label,
-body .product-name.papi.selected label,
-body .product-name.delfos.selected label {
-  background-position: 0 15px;
-}
-body .product-name.face label,
-body .product-name.etray label,
-body .product-name.feedback label,
-body .product-name.papi label,
-body .product-name.delfos label {
-  background-position: 0 -585px;
-}
-body .product-name.elevel:hover label,
-body .product-name.evalue:hover label {
-  background-position: 0 -281px;
-}
-body .product-name.elevel.selected label,
-body .product-name.evalue.selected label {
-  background-position: 0 20px;
-}
-body .product-name.elevel label,
-body .product-name.evalue label {
-  background-position: 0 -580px;
-}
-body .product-name.rsc:hover label,
-body .product-name.rvan:hover label {
-  background-position: 0 -296px;
-}
-body .product-name.rsc.selected label,
-body .product-name.rvan.selected label {
-  background-position: 0 5px;
-}
-body .product-name.rsc label,
-body .product-name.rvan label {
-  background-position: 0 -595px;
+body .product-name.rsc span.ios-toggle-container,
+body .product-name.rvan span.ios-toggle-container {
+  margin-top: 0;
 }
 body .margin-header {
   margin-top: 65px;
@@ -433,6 +414,22 @@ section#contact input[type="text"],
 section#contact input[type="email"],
 section#contact textarea {
   width: 95%;
+}
+section#contact p {
+  line-height: 30px;
+}
+section#contact p:first-child {
+  padding-left: 30px;
+}
+section#contact p:first-child .icon-contact {
+  margin-left: -30px;
+  margin-top: 3px;
+}
+section#contact .icon-contact {
+  color: #aaa;
+  font-size: 24px;
+  margin-right: 7px;
+  float: left;
 }
 section#contact label {
   margin: 10px 0 5px;

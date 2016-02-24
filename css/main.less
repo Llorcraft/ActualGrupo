@@ -26,10 +26,44 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
 
+    #hand-bag {
+        margin: 10px;
+
+        .selected-tool {
+            height: 60px;
+            //border: 1px solid #ccc;
+            margin-bottom: 5px;
+            vertical-align: middle;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 60%;
+        }
+    }
+
+    .nicescroll-rails-hr {
+        visibility: hidden;
+    }
+
     .product-name {
-        font-size: 150%;
+        font-size: 110%;
         margin-bottom: 20px;
-        cursor: pointer;
+        //text-align: center;
+        label {
+            cursor: pointer;
+            width: 100%;
+            margin-right: -70px;
+        }
+
+        span.ios-toggle-container {
+            float: left;
+            margin: 10px 10px 0 0;
+            text-align: center;
+
+            label {
+                width: 60px;
+                margin: 0 !important;
+            }
+        }
 
         &.etray {
             img {
@@ -37,67 +71,18 @@ body {
             }
         }
 
-        label {
-            width: 100%;
-            cursor: pointer;
-            display: block;
-            padding-left: 40px;
-            background-image: url(img/radio-buttons.png);
-            background-repeat: no-repeat;
-            background-position: 0 15px;
-        }
-
         &.face, &.etray, &.feedback, &.papi, &.delfos {
-            &:hover {
-                label {
-                    background-position: 0 -286px;
-                }
-            }
-
-            &.selected {
-                label {
-                    background-position: 0 15px;
-                }
-            }
-
-            label {
-                background-position: 0 -585px;
-            }
         }
 
         &.elevel, &.evalue {
-            &:hover {
-                label {
-                    background-position: 0 -281px;
-                }
-            }
-
-            &.selected {
-                label {
-                    background-position: 0 20px;
-                }
-            }
-
-            label {
-                background-position: 0 -580px;
+            span.ios-toggle-container {
+                margin-top: 15px;
             }
         }
 
         &.rsc, &.rvan {
-            &:hover {
-                label {
-                    background-position: 0 -296px;
-                }
-            }
-
-            &.selected {
-                label {
-                    background-position: 0 5px;
-                }
-            }
-
-            label {
-                background-position: 0 -595px;
+            span.ios-toggle-container {
+                margin-top: 0;
             }
         }
     }
@@ -494,6 +479,7 @@ section#cite-3 {
 
 section#two-columns {
     background: white;
+
     a:first-child {
         &:after {
             content: "";
@@ -527,7 +513,6 @@ section#two-columns {
         font-weight: 100;
         font-size: 16px;
     }
-
     /*div {
         margin: 0;
         padding: 0;
@@ -540,6 +525,26 @@ section#contact {
 
     input[type="text"], input[type="email"], textarea {
         width: 95%;
+    }
+
+    p {
+        line-height: 30px;
+
+        &:first-child {
+            padding-left: 30px;
+
+            .icon-contact {
+                margin-left: -30px;
+                margin-top: 3px;
+            }
+        }
+    }
+
+    .icon-contact {
+        color: #aaa;
+        font-size: 24px;
+        margin-right: 7px;
+        float: left;
     }
 
     label {

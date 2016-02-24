@@ -47,9 +47,30 @@ $(function () {
                             .select();
     });
 
-    $("h2.product-name").on("click", function () {
-        $(this).toggleClass("selected");
+    $(".ios-toggle.checkbox-green").on("change", function () {
+        var _img = $(this).parent().next().find("img"),
+            _bag = $("#hand-bag"),
+            _left = _bag.offset().left + 20,
+            _delta = _.chain(_bag.find("img"))
+                      .map(function (i) { return $(i).height() + parseInt($(i).css("margin-top")) * 2; }).value(),
+            _top = _bag.offset().top + (_delta.length === 0 ? 0 : _.reduce(_delta, function (a, b) { return a + b; }));
+
+        if (!$(this).is(":checked") || $("img[src='" + _img.attr("src") + "']").length != 1) {
+            $("img[src='" + _img.attr("src") + "']:last").hide("slide", function () { $(this).parent().hide("slide", function () { $(this).remove(); }); });
+            return;
+        };
+
+        _img.clone().appendTo("body")
+                    .css({ position: "absolute", top: _img.offset().top, left: _img.offset().left, "z-index": 1999 })
+                    .animate({ top: _top, left: _left }, 1000 - _img.offset().top / 5,
+                    function () {
+                        $(this).hide().appendTo($("<div class='col-md-4 text-center selected-tool'/>")
+                                                    .css({ "background-image": "url(" + $(this).attr("src") + ")" })
+                                                    .appendTo(_bag));
+                    });
     });
+
+
 });
 
 function setCurrentEvaluations(qty) {
