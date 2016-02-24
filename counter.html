@@ -7,37 +7,127 @@
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <style type="text/css">
-        ul { list-style: none; padding: 0; margin: 0; width: 27px; height: 40px; overflow: hidden; display: inline-block; }
-            ul li { line-height: 40px; height: 40px; text-align: center; font-size: 40px; font-weight: bold; font-family: Verdana; border-bottom: 1px solid transparent }
-    </style>
-    <script type="text/javascript">
-
-        function model(number) {
-            var self = this;
-
-            self.number = ko.observable(number);
-
-            setInterval(self.number(self.number++), 1000);
+        ul {
+            list-style: none;
+            height: 72px;
+            padding: 0;
+            margin: 0 -2px;
+            overflow: hidden;
+            display: inline-block;
+            /*visibility: hidden;
+            border: 1px solid #ccc;
+            border-right: none;*/
         }
 
+            ul.first:last-child {
+                /*border: 1px solid #ccc;*/
+            }
+
+            ul li {
+                padding: 0 2px;
+                line-height: 72px;
+                height: 72px;
+                font-size: 72px;
+                text-align: center;
+                font-weight: bold;
+                font-family: Verdana;
+                /*background: rgba(254,254,254,1);
+                background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 50%, rgba(226,226,226,1) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(49%, rgba(209,209,209,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(100%, rgba(226,226,226,1)));
+                background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 50%, rgba(226,226,226,1) 100%);
+                background: -o-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 50%, rgba(226,226,226,1) 100%);
+                background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 50%, rgba(226,226,226,1) 100%);
+                background: linear-gradient(to bottom, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 49%, rgba(219,219,219,1) 50%, rgba(226,226,226,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e2e2e2', GradientType=0 );*/
+            }
+
+            ul.first li:first-child {
+                color: white;
+            }
+    </style>
+    <script type="text/javascript">
+        function model(container) {
+            var self = this,
+                speed = 250,
+                counter = 0,
+                interval = null,
+                container = $(container),
+                update = function () {
+                    debugger;
+                    scrollUp(container.find("ul:last"));
+                    self.number++;
+                    //clearTimeout(interval);
+                },
+                scrollUp = function (ul) {
+                    debugger;
+                    if (parseInt(ul.find("li:first").css("margin-top")) === -parseInt(ul.height() * 9))
+                        setTimeout(function () { scrollUp($("ul").eq(container.index(ul) - 1)); }, 0);
+
+                    ul.find("li:first").animate({ "margin-top": parseInt(ul.find("li:first").css("margin-top")) - ul.find("li:first").height() }, speed / 1.5, function () {
+                        $(this).parent().removeClass("first")
+                                        .trigger("update");
+                        if (parseInt(ul.find("li:first").css("margin-top")) === -parseInt(ul.height() * 10))
+                            ul.find("li:first").css("margin-top", 0);
+                    });
+                };
+
+            self.number = 0;
+            self.digits = ("" + self.number).match(/[0-9]/g).map(function (d) { return parseInt(d); });
+            self.update = function (inc) {
+                if (null === interval) {
+                    var _interval = 0;
+                    counter += inc;
+                    while (self.number !== counter) {
+                        _interval++;
+                        interval = setTimeout(update, _interval * speed);
+                    }
+                } else {
+                    counter += inc;
+                }
+                return self;
+            };
+
+            self.init = function (number) {
+                self.number = counter = number;
+                setTimeout(function () {
+                    ("" + number).match(/[0-9]/g).reverse().forEach(function (d, i) {
+                        var _li = container.find("ul").eq(-i - 1).find("li:first");
+                        _li.css("margin-top", _li.height() * -parseInt(d))
+                           .parent().removeClass("first");
+                    });
+                }, 250);
+                return self;
+            };
+
+        };
+
+        //function init(number) {
+        //    ("" + number).match(/[0-9]/g).reverse().forEach(function (d, i) {
+        //        var _li = $("ul").eq(-i - 1).find("li:first");
+        //        _li.css("margin-top", _li.height() * -parseInt(d))
+        //           .parent().removeClass("first");
+        //    });
+        //    interval.setNumber(number);
+        //    random(_.random(1, 5));
+        //    //setInterval(function () { scrollUp($("ul:last")); }, interval.update);
+        //};
+
+        //function random() {
+        //    setTimeout(function () {
+        //        interval.update(_.random(1, 5));
+        //        random();
+        //    }, _.random(2.5, 5) * 1000);
+        //};
+
         $(function () {
-
-
-
-            ko.applyBindings(null, $("body")[0]);
-            setInterval(function () {
-                console.log(parseInt($("ul li:first").css("margin-top")), parseInt($("ul").height() * 10));
-                $("ul li:first").animate({ "margin-top": parseInt($("ul li:first").css("margin-top")) - $("ul li:first").height() - 1}, 250, function () {
-                    if (parseInt($("ul li:first").css("margin-top")) === -parseInt($("ul").height() * 10 + 10))
-                        $("ul li:first").css("margin-top", 0);
-                });
-            }, 1000);
+            ko.applyBindings(new model("body").init(900), $("body")[0]);
+            //init(251);
         });
     </script>
 </head>
 <body>
-    <!--ko foreach: _.range(0, 5)-->
-    <ul data-bind="foreach: _.range(0, 10).concat([0])">
+    <!--ko foreach: _.range(0, 11)-->
+    <ul data-bind="foreach: _.range(0, 10).concat([0]), css: {first : $data !== 10}">
         <li data-bind="html: $data"></li>
     </ul>
     <!--/ko-->

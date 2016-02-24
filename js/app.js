@@ -8,7 +8,7 @@ String.prototype.toInt = function () {
 
 $(function () {
     $("html").niceScroll();
-
+    //$("#permanent-phone").css({ top: $("section.home-slider h3").position().top });
     setCurrentEvaluations(96251);
     lastScrollTop = $(window).scrollTop();
     $(window).on("resize", setDynamicObjectSize)
@@ -58,7 +58,7 @@ function setCurrentEvaluations(qty) {
 };
 
 function setDynamicObjectSize(event) {
-    $("#main-logo").css({ width: $(window).width() / 3 });
+    $("#main-logo").css({ width: $(window).width() / 3.5 });
 };
 
 function setDinamicObjectPosition(event) {
