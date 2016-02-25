@@ -14,73 +14,54 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
 }
+body #hand-bag {
+  margin: 10px;
+}
+body #hand-bag .selected-tool {
+  height: 60px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+}
+body .nicescroll-rails-hr {
+  visibility: hidden;
+}
 body .product-name {
-  font-size: 150%;
+  font-size: 110%;
   margin-bottom: 20px;
+}
+body .product-name label {
   cursor: pointer;
+  width: 100%;
+  margin-right: -70px;
+}
+body .product-name span.ios-toggle-container {
+  float: left;
+  margin: 10px 10px 0 0;
+  text-align: center;
+}
+body .product-name span.ios-toggle-container label {
+  width: 60px;
+  margin: 0 !important;
 }
 body .product-name.etray img {
   margin-bottom: -10px;
 }
-body .product-name label {
-  width: 100%;
-  cursor: pointer;
-  display: block;
-  padding-left: 40px;
-  background-image: url(img/radio-buttons.png);
-  background-repeat: no-repeat;
-  background-position: 0 15px;
+body .product-name.elevel span.ios-toggle-container,
+body .product-name.evalue span.ios-toggle-container {
+  margin-top: 15px;
 }
-body .product-name.face:hover label,
-body .product-name.etray:hover label,
-body .product-name.feedback:hover label,
-body .product-name.papi:hover label,
-body .product-name.delfos:hover label {
-  background-position: 0 -286px;
-}
-body .product-name.face.selected label,
-body .product-name.etray.selected label,
-body .product-name.feedback.selected label,
-body .product-name.papi.selected label,
-body .product-name.delfos.selected label {
-  background-position: 0 15px;
-}
-body .product-name.face label,
-body .product-name.etray label,
-body .product-name.feedback label,
-body .product-name.papi label,
-body .product-name.delfos label {
-  background-position: 0 -585px;
-}
-body .product-name.elevel:hover label,
-body .product-name.evalue:hover label {
-  background-position: 0 -281px;
-}
-body .product-name.elevel.selected label,
-body .product-name.evalue.selected label {
-  background-position: 0 20px;
-}
-body .product-name.elevel label,
-body .product-name.evalue label {
-  background-position: 0 -580px;
-}
-body .product-name.rsc:hover label,
-body .product-name.rvan:hover label {
-  background-position: 0 -296px;
-}
-body .product-name.rsc.selected label,
-body .product-name.rvan.selected label {
-  background-position: 0 5px;
-}
-body .product-name.rsc label,
-body .product-name.rvan label {
-  background-position: 0 -595px;
+body .product-name.rsc span.ios-toggle-container,
+body .product-name.rvan span.ios-toggle-container {
+  margin-top: 0;
 }
 body .margin-header {
   margin-top: 65px;
 }
 body #permanent-phone {
-  background-color: #363731;
+  background-color: #535353;
   color: #fff;
   right: 0;
   width: auto;
@@ -100,7 +81,7 @@ body #permanent-phone i {
 }
 body #permanent-phone span {
   width: 0;
-  color: #363731;
+  color: #535353;
   font-size: 16px;
   float: right;
   margin: 2px;
@@ -117,7 +98,7 @@ body #permanent-phone:hover span {
   width: 150px;
 }
 body [data-spy="affix"] {
-  background: #363731;
+  background: #535353;
   height: 65px;
   margin-top: -65px;
   z-index: 2000;
@@ -141,7 +122,7 @@ body [data-spy="affix"] li.search input {
   float: right;
   border: 1px solid #808080;
   border-radius: 5px;
-  background: #e7e8e5;
+  background: #ffffff;
   -webkit-transition: all linear .35s;
   -moz-transition: all linear .35s;
   -o-transition: all linear .35s;
@@ -161,7 +142,7 @@ body [data-spy="affix"] a,
 body [data-spy="affix"] a:hover,
 body [data-spy="affix"] a:visited,
 body [data-spy="affix"] a:link {
-  color: #fff !important;
+  color: #ffffff !important;
   background-color: transparent !important;
   padding: 5px;
   border-radius: 4px;
@@ -174,7 +155,7 @@ body [data-spy="affix"] a:link:after {
   margin: 0;
 }
 body [data-spy="affix"] #white-logo {
-  margin-top: 3px;
+  margin: 3px 0 0 3px;
   width: 122px;
   height: 59px;
   cursor: pointer;
@@ -182,7 +163,7 @@ body [data-spy="affix"] #white-logo {
   display: block;
 }
 body .company-in {
-  color: #CF0D0D;
+  color: #cf0d0d;
   font-family: 'Trebuchet MS' !important;
   font-weight: 100;
   white-space: nowrap;
@@ -198,7 +179,7 @@ body .company-sight.uppercase {
   font-size: 75%;
 }
 body a {
-  color: #CF0D0D !important;
+  color: #cf0d0d !important;
   text-decoration: none !important;
 }
 body a:after {
@@ -306,7 +287,7 @@ section#main-services div.main-service i {
   font-size: 200%;
   display: block;
   margin-bottom: 10px;
-  color: #CF0D0D;
+  color: #cf0d0d;
 }
 section#main-services div.main-service a:first-child:after {
   content: "";
@@ -322,7 +303,7 @@ section#numbers {
   padding-bottom: 30px;
 }
 section#numbers .row {
-  color: #888;
+  color: #888888;
 }
 section#numbers .row:nth-child(3) {
   border-bottom: 1px solid #e1e1e1;
@@ -381,7 +362,7 @@ section#cite-2 .parallax-container a {
   color: #fff !important;
 }
 section#cite-3 .parallax-container {
-  min-height: 600px;
+  min-height: 400px;
   text-align: center;
 }
 section#cite-3 .parallax-container h1 {
@@ -405,7 +386,7 @@ section#two-columns h2 i[class^="icon-"],
 section#two-columns h2 i[class*=" icon-"] {
   display: block;
   font-size: 70px;
-  color: #CF0D0D;
+  color: #cf0d0d;
 }
 section#two-columns h2 i[class^="icon-"].icon-look11,
 section#two-columns h2 i[class*=" icon-"].icon-look11 {
@@ -414,7 +395,7 @@ section#two-columns h2 i[class*=" icon-"].icon-look11 {
 section#two-columns h2 label {
   font-size: 60%;
   font-weight: 100;
-  color: #888;
+  color: #888888;
   display: block;
 }
 section#two-columns p,
