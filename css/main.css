@@ -68,7 +68,7 @@ body #permanent-phone {
   white-space: nowrap;
   overflow: hidden;
   position: fixed;
-  bottom: 50%;
+  top: 26%;
   padding: 6px;
   border-radius: 10px 0 0 10px;
   z-index: 20000;
@@ -258,9 +258,8 @@ section.home-slider.talent-map {
 section.home-slider #main-logo {
   margin-top: 260px;
 }
-section.home-slider h1 {
+section.home-slider h3 {
   color: white;
-  text-shadow: 1px 1px 1px #000;
 }
 section#main-services {
   background: #fafafa;
@@ -373,7 +372,11 @@ section#cite-3 .parallax-container a {
   color: #fff !important;
 }
 section#two-columns {
-  margin: 30px 0;
+  background: white;
+  /*div {
+        margin: 0;
+        padding: 0;
+    }*/
 }
 section#two-columns a:first-child:after {
   content: "";
@@ -411,6 +414,22 @@ section#contact input[type="text"],
 section#contact input[type="email"],
 section#contact textarea {
   width: 95%;
+}
+section#contact p {
+  line-height: 30px;
+}
+section#contact p:first-child {
+  padding-left: 30px;
+}
+section#contact p:first-child .icon-contact {
+  margin-left: -30px;
+  margin-top: 3px;
+}
+section#contact .icon-contact {
+  color: #aaa;
+  font-size: 24px;
+  margin-right: 7px;
+  float: left;
 }
 section#contact label {
   margin: 10px 0 5px;

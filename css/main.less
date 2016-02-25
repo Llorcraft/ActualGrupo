@@ -99,7 +99,7 @@ body {
         white-space: nowrap;
         overflow: hidden;
         position: fixed;
-        bottom: 50%;
+        top: 26%;
         padding: 6px;
         border-radius: 10px 0 0 10px;
         z-index: 20000;
@@ -328,9 +328,9 @@ section.home-slider {
         margin-top: (@main-services-height + 10) * 1px;
     }
 
-    h1 {
+    h3 {
         color: white;
-        text-shadow: 1px 1px 1px #000;
+        //text-shadow: 1px 1px 1px #000;
     }
 }
 
@@ -478,7 +478,7 @@ section#cite-3 {
 }
 
 section#two-columns {
-    margin: 30px 0;
+    background: white;
 
     a:first-child {
         &:after {
@@ -513,6 +513,10 @@ section#two-columns {
         font-weight: 100;
         font-size: 16px;
     }
+    /*div {
+        margin: 0;
+        padding: 0;
+    }*/
 }
 
 section#contact {
@@ -521,6 +525,26 @@ section#contact {
 
     input[type="text"], input[type="email"], textarea {
         width: 95%;
+    }
+
+    p {
+        line-height: 30px;
+
+        &:first-child {
+            padding-left: 30px;
+
+            .icon-contact {
+                margin-left: -30px;
+                margin-top: 3px;
+            }
+        }
+    }
+
+    .icon-contact {
+        color: #aaa;
+        font-size: 24px;
+        margin-right: 7px;
+        float: left;
     }
 
     label {
