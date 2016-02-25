@@ -8,11 +8,150 @@ html {
 body {
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', 'Helvetica Neue';
+  font-family: 'Helvetica Neue', 'Segoe UI';
   font-weight: 100;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
+  /*Fernan*/
+  /*end Fernan*/
+}
+body .skills-widget {
+  position: relative;
+  width: 98%;
+}
+body .skills-widget .arrow-down-bottom,
+body .skills-widget .arrow-down-top {
+  border-top: 7px solid #1068AC;
+  z-index: 1;
+}
+body .skills-widget .percent-bar {
+  border-right: 1px solid #C5C5C5;
+  height: 114%;
+  position: absolute;
+  top: -23px;
+  width: 0;
+}
+body .skills-widget .percent-bar.one {
+  left: 10px;
+}
+body .skills-widget .percent-bar.two {
+  left: 20%;
+}
+body .skills-widget .percent-bar.three {
+  left: 40%;
+}
+body .skills-widget .percent-bar.four {
+  left: 60%;
+}
+body .skills-widget .percent-bar.five {
+  left: 80%;
+}
+body .skills-widget .percent-bar.six {
+  left: 100%;
+}
+body .skills-widget .percent-bar > span {
+  bottom: -30px;
+  position: absolute;
+  font-size: 16px;
+  color: #7d7d7d;
+  font-family: SourceSansProLight;
+  margin-left: -8px;
+}
+body .skills-widget .percentage {
+  background: #424242;
+  line-height: 54px;
+  padding: 8px 11px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+body .skills-widget .percentage i {
+  position: relative;
+  right: 0;
+  font-size: 32px;
+  font-weight: 100;
+  color: #c2c2c2;
+}
+body .skills-widget .arrow-right {
+  border-left: 6px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 14px solid #424242;
+  height: 0;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  -webkit-transform: rotate(-36deg);
+  -ms-transform: rotate(-36deg);
+  -o-transform: rotate(-36deg);
+  -moz-transform: rotate(-36deg);
+  transform: rotate(-36deg);
+  width: 0;
+}
+body .skills-widget .arrow-down-top {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  position: absolute;
+  left: 1px;
+  top: -5px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+body .skills-widget .arrow-down-bottom {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  position: absolute;
+  left: 1px;
+  bottom: -5px;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+body .skills-widget .progress {
+  width: 2%;
+  height: 54px;
+  color: #fff;
+  margin: 32px 0;
+  position: relative;
+  background-color: #424242;
+  text-transform: uppercase;
+  width: 0;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-transition: all 1000ms ease;
+  -moz-transition: all 1000ms ease;
+  -ms-transition: all 1000ms ease;
+  -o-transition: all 1000ms ease;
+  transition: all 1000ms ease;
+}
+body .skills-widget .progress .progress-bar:nth-child(1) {
+  background: #0082bf /*#6BC729*/;
+}
+body .skills-widget .progress .progress-bar:nth-child(2) {
+  background: #ff6c00 /*#FF6C00*/;
+}
+body .skills-widget .progress .progress-bar:nth-child(3) {
+  background: #cf0d0d;
 }
 body #hand-bag {
   margin: 10px;
@@ -301,19 +440,70 @@ section#main-services div.main-service:hover a {
 section#numbers {
   padding-bottom: 30px;
 }
+section#numbers .cell-front-title {
+  vertical-align: top;
+  height: 50px;
+  background: #fff;
+}
+section#numbers .cell-front-orange {
+  background: #E4773E;
+  width: 32%;
+  color: #fff;
+}
+section#numbers .cell-front-blue {
+  background: #0082BF;
+  width: 40%;
+  color: #fff;
+}
+section#numbers .cell-front-red {
+  background: #CF0D0D;
+  width: 28%;
+  color: #fff;
+  height: 300px;
+}
+section#numbers .cell-back-title {
+  background: #fff;
+}
+section#numbers .cell-back-orange {
+  vertical-align: bottom;
+  background: #d25b1d;
+}
+section#numbers .cell-back-orange img {
+  width: 32px;
+  height: auto;
+}
+section#numbers .cell-back-blue {
+  vertical-align: bottom;
+  background: #005f8c;
+}
+section#numbers .cell-back-red {
+  vertical-align: bottom;
+  background: #9f0a0a;
+}
+section#numbers #counter {
+  margin: -96px 0 0 93px;
+  font-size: 40px;
+  color: white;
+  -webkit-transform: rotate(-30deg) skew(-36deg);
+  -moz-transform: rotate(-30deg) skew(-36deg);
+  -ms-transform: rotate(-30deg) skew(-36deg);
+  -o-transform: rotate(-30deg) skew(-36deg);
+  transform: rotate(-30deg) skew(-36deg);
+}
 section#numbers .row {
   color: #888888;
-}
-section#numbers .row:nth-child(3) {
-  border-bottom: 1px solid #e1e1e1;
-}
-section#numbers .row:nth-child(4),
-section#numbers .row:nth-child(5) {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #e1e1e1;
-}
-section#numbers .row:nth-child(6) {
-  border-top: 1px solid #ffffff;
+  /*&:nth-child(3) {
+            border-bottom: 1px solid darken(@alternative-section-bg-color, 10%);
+        }
+
+        &:nth-child(4), &:nth-child(5) {
+            border-top: 1px solid lighten(@alternative-section-bg-color, 10%);
+            border-bottom: 1px solid darken(@alternative-section-bg-color, 10%);
+        }
+
+        &:nth-child(6) {
+            border-top: 1px solid lighten(@alternative-section-bg-color, 10%);
+        }*/
 }
 section#numbers .row .col-md-5 {
   width: 25%;
@@ -426,7 +616,7 @@ section#contact p:first-child .icon-contact {
   margin-top: 3px;
 }
 section#contact .icon-contact {
-  color: #aaa;
+  color: #535353;
   font-size: 24px;
   margin-right: 7px;
   float: left;
@@ -472,12 +662,13 @@ section#contact .socicon:hover {
   transform: rotateZ(360deg);
 }
 section#footer {
-  background: #212121;
-  color: #fff;
+  background: #535353;
+  color: #ffffff;
   padding: 10px;
+  font-weight: 100;
 }
 @keyframes bounce {
-  0%,
+  0,
   100%,
   20%,
   53%,

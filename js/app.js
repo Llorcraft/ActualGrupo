@@ -15,7 +15,14 @@ $(function () {
              .on("scroll", function () { })
              .trigger("resize");
 
-
+    new Waypoint({
+        element: $(".skills-widget")[0],
+        handler: function () {
+            $(".skills-widget .progress").each(function () { $(this).width($(this).data("width") + "%"); });
+        },
+        offset: 400
+    });
+    
     $('a[href][href^="#"], #start-scroll').on("click", function (event) {
         event.preventDefault();
         $(window).stop()
